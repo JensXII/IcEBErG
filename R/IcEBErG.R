@@ -1,5 +1,7 @@
 #' All hospitalizations and hospitalizations with respiratory diagnosis.
 #'
+#' Demand ODBC access to IB_EpiLPR
+#'
 #' @param start start season (year started).
 #' @param end end season (year started).
 #' @return season, agegrp, hospilitazions with respiratory diagnosis, all hospitalilazions, mean length of resp-hospitalitazions from season \code{start} to \code{end}.
