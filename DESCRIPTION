@@ -1,0 +1,16 @@
+Package: IcEBErG
+Type: Package
+Title: Influenza attributable hospitalizations
+Version: 0.1.0
+Author: person("Nielsen", "Jens", email = "nls@ssi.dk", role = c("aut", "cre"))
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: Extract hospitalizations with a respiratory diagnose or with aat least one influenza positive specimen.
+    Calculate Positive percentage.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    RODBC,
+    sqldf,
+    ISOweek
+RoxygenNote: 6.1.1
