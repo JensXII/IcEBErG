@@ -6,7 +6,7 @@ Author: person("Nielsen", "Jens", email = "nls@ssi.dk", role = c("aut", "cre"))
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: Extract hospitalizations with a respiratory diagnose or with aat least one influenza positive specimen.
     Calculate Positive percentage.
-License: What license is it under?
+License: GLP-2
 Encoding: UTF-8
 LazyData: true
 Imports: 
