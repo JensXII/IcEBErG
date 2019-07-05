@@ -4,7 +4,11 @@
 #'
 #' @param start start season (year started).
 #' @param end end season (year started).
-#' @return season, agegrp, hospilitazions with respiratory diagnosis, all hospitalilazions, mean length of resp-hospitalitazions from season \code{start} to \code{end}.
+#' @return Return season, agegrp, hospilitazions with respiratory diagnosis, all hospitalilazions, mean length of resp-hospitalitazions from season \code{start} to \code{end}.
+#' @examples
+#' \dontrun{
+#' hosp(2010, 2017)
+#' }
 hosp <- function(start, end) {
   con <- RODBC::odbcConnect("HAIBA_TEST")
   hosp <- RODBC::sqlQuery(con, paste0("
@@ -42,7 +46,11 @@ hosp <- function(start, end) {
 #'
 #' @param start start season (year started).
 #' @param end end season (year started).
-#' @return season, agegrp, hospilitazions with a positive influenza specimen, mean length of these hospitalizations from season \code{start} to \code{end}
+#' @return Return season, agegrp, hospilitazions with a positive influenza specimen, mean length of these hospitalizations from season \code{start} to \code{end}
+#' @examples
+#' \dontrun{
+#' influ(2010, 2017)
+#' }
 influ <- function(start, end) {
   influ <- read.delim(paste0("S:/Data/Hosp and ICT/Data and output/", start, "/MiBa extract/influpos", start+1, "w39.csv"),
                       header = TRUE, sep = ",")
@@ -90,7 +98,11 @@ influ <- function(start, end) {
 #'
 #' @param start start year.
 #' @param end end year.
-#' @return season, agegrp, population by January 1 from season \code{start} to \code{end}.
+#' @return Return season, agegrp, population by January 1 from season \code{start} to \code{end}.
+#' @examples
+#' \dontrun{
+#' pop(2010, 2017)
+#' }
 pop <- function(start, end) {
   con <- RODBC::odbcConnect("DKMOMO")
   pop <- RODBC::sqlQuery(con, paste0("
@@ -111,7 +123,11 @@ pop <- function(start, end) {
 #'
 #' @param start start season (year started).
 #' @param end end season (year started).
-#' @return season, agegrp, number of positive specimen and all specimens, and positive percentage from season \code{start} to \code{end}.
+#' @return Return season, agegrp, number of positive specimen and all specimens, and positive percentage from season \code{start} to \code{end}.
+#' @examples
+#' \dontrun{
+#' PosPct(2010, 2017)
+#' }
 PosPct <- function(start, end) {
   influ <- read.delim(paste0("S:/Data/Hosp and ICT/Data and output/", start, "/MiBa extract/influpos", start+1, "w39.csv"),
                       header = TRUE, sep = ",")
@@ -142,7 +158,11 @@ PosPct <- function(start, end) {
 #'
 #' @param start start season (year started).
 #' @param end end season (year started).
-#' @return ;-separated file with season, agegrp, number of positive specimen and all specimens, and positive percentage from season \code{start} to \code{end}.
+#' @return Create ;-separated file with season, agegrp, number of positive specimen and all specimens, and positive percentage from season \code{start} to \code{end}.
+#' @examples
+#' \dontrun{
+#' Writehosp(2010, 2017)
+#' }
 Writehosp <- function(start, end) {
   res <- merge(merge(hosp(start, end), pop(start, end), by = c("season", "agegrp"), all = TRUE),
              influ(start, end), by = c("season", "agegrp"), all = TRUE)
@@ -155,7 +175,11 @@ Writehosp <- function(start, end) {
 #'
 #' @param start start season (year started).
 #' @param end end season (year started).
-#' @return ;-separated file with season, agegrp, number of positive specimen and all specimens, and positive percentage from season \code{start} to \code{end}.
+#' @return Create ;-separated file with season, agegrp, number of positive specimen and all specimens, and positive percentage from season \code{start} to \code{end}.
+#' @examples
+#' \dontrun{
+#' WritePosPct(2010, 2017)
+#' }
 WritePosPct <- function(start, end) {
   PosPct <- PosPct(start, end)
   write.table(PosPct, file = "S:/Data/Hosp and ICT/IcEBErG/PositivePercent.txt",

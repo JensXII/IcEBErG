@@ -12,8 +12,13 @@ pop(start, end)
 \item{end}{end year.}
 }
 \value{
-season, agegrp, population by January 1 from season \code{start} to \code{end}.
+Return season, agegrp, population by January 1 from season \code{start} to \code{end}.
 }
 \description{
 Population by age group by 1st January.
+}
+\examples{
+\dontrun{
+pop(2010, 2017)
+}
 }

@@ -12,8 +12,13 @@ Writehosp(start, end)
 \item{end}{end season (year started).}
 }
 \value{
-;-separated file with season, agegrp, number of positive specimen and all specimens, and positive percentage from season \code{start} to \code{end}.
+Create ;-separated file with season, agegrp, number of positive specimen and all specimens, and positive percentage from season \code{start} to \code{end}.
 }
 \description{
 Create ;-separated file with respiratory and influenza positive hospitalizations.
+}
+\examples{
+\dontrun{
+Writehosp(2010, 2017)
+}
 }

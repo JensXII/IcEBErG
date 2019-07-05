@@ -12,8 +12,13 @@ PosPct(start, end)
 \item{end}{end season (year started).}
 }
 \value{
-season, agegrp, number of positive specimen and all specimens, and positive percentage from season \code{start} to \code{end}.
+Return season, agegrp, number of positive specimen and all specimens, and positive percentage from season \code{start} to \code{end}.
 }
 \description{
 Positive percentage among all specimens.
+}
+\examples{
+\dontrun{
+PosPct(2010, 2017)
+}
 }

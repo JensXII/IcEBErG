@@ -12,8 +12,13 @@ hosp(start, end)
 \item{end}{end season (year started).}
 }
 \value{
-season, agegrp, hospilitazions with respiratory diagnosis, all hospitalilazions, mean length of resp-hospitalitazions from season \code{start} to \code{end}.
+Return season, agegrp, hospilitazions with respiratory diagnosis, all hospitalilazions, mean length of resp-hospitalitazions from season \code{start} to \code{end}.
 }
 \description{
 Demand ODBC access to IB_EpiLPR
+}
+\examples{
+\dontrun{
+hosp(2010, 2017)
+}
 }

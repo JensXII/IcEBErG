@@ -12,8 +12,13 @@ influ(start, end)
 \item{end}{end season (year started).}
 }
 \value{
-season, agegrp, hospilitazions with a positive influenza specimen, mean length of these hospitalizations from season \code{start} to \code{end}
+Return season, agegrp, hospilitazions with a positive influenza specimen, mean length of these hospitalizations from season \code{start} to \code{end}
 }
 \description{
 Hospitalizations with a positive influenza sample during hospitalizaion.
+}
+\examples{
+\dontrun{
+influ(2010, 2017)
+}
 }
