@@ -15,5 +15,5 @@ hosp(start, end)
 season, agegrp, hospilitazions with respiratory diagnosis, all hospitalilazions, mean length of resp-hospitalitazions from season \code{start} to \code{end}.
 }
 \description{
-All hospitalizations and hospitalizations with respiratory diagnosis.
+Demand ODBC access to IB_EpiLPR
 }
